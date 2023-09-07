@@ -1,38 +1,95 @@
-.App {
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+.App{
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  background-color: #CEDEBD;
+}
+.Header, .App h2{
   text-align: center;
+  padding: 1rem;
+}
+button{
+  border: 0;
+  background: transparent;
+}
+button:hover{
+  cursor: pointer;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*            NOTE          */
+.noteContainer{
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.note{
+  width: 20rem;
+  background: #fff;
+  padding: 1rem;
+  margin: 1rem;
+  position: relative;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.note h3{
+  margin-bottom: 1rem;
+}
+.note p{
+  font-size: 1.1rem;
+}
+.note h3,
+.note p{
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+.overlay{
+  width: 10%;
+  height: 100%;
+  /*border-radius: 1rem;*/
+  background: #CEDEBD; 
+  position: absolute;
+  top: 0;
+  right: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-around;
+  transition: .5s ease;
+  opacity:0;
+}
+.note:hover .overlay{
+  opacity: 1;
 }
 
-.App-link {
-  color: #61dafb;
+/*         FORM          */
+form{
+  background: #fff;
+  margin: 0 auto;
+  width: 20rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  position: relative;
+}
+form textarea{
+  background: transparent;
+  width: 100%;
+  border: 0;
+  outline: 0;
+ resize: none; 
+ font-size: 1.2rem;
+}
+form button{
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media screen and (max-width: 480px){
+  form{
+    width: 90%;
   }
 }
