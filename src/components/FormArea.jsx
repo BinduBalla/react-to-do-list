@@ -16,7 +16,6 @@ function FormArea(props) {
     }
     function submitNote(event) {
         props.onAdd(note)
-        console.log(note)
         setNote({
             title: "",
             content: ""
